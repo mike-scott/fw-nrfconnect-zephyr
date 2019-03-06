@@ -752,6 +752,8 @@ static inline char *inet_ntop(sa_family_t family, const void *src, char *dst,
 #define SO_REUSEADDR 2
 /** sockopt: Async error (ignored, for compatibility) */
 #define SO_ERROR 4
+#define SO_RCVTIMEO 20
+#define SO_BINDTODEVICE 25
 
 /** sockopt: Timestamp TX packets */
 #define SO_TIMESTAMPING 37
@@ -770,6 +772,13 @@ static inline char *inet_ntop(sa_family_t family, const void *src, char *dst,
 /** sockopt: Socket TX time (when the data should be sent) */
 #define SO_TXTIME 61
 #define SCM_TXTIME SO_TXTIME
+
+/* Interface description structure */
+#define IFNAMSIZ 64
+
+struct ifreq {
+    char ifr_name[IFNAMSIZ]; /* Interface name */
+};
 
 /** @cond INTERNAL_HIDDEN */
 /**
