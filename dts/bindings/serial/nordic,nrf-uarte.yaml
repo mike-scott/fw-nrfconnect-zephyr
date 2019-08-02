@@ -19,12 +19,12 @@ properties:
     tx-pin:
       type: int
       description: TX pin
-      category: required
+      category: optional
 
     rx-pin:
       type: int
       description: RX pin
-      category: required
+      category: optional
 
     rts-pin:
       type: int
